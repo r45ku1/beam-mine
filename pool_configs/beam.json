@@ -1,0 +1,65 @@
+{
+  "enabled": true,
+  "coin": "beam.json",
+  "paymentProcessing": {
+    "enabled": false,
+    "minConf": 5,
+    "paymentMode": "prop",
+    "_comment_paymentMode": "none",
+    "paymentInterval": 20,
+    "minimumPayment": 0.05,
+    "maxBlocksPerPayment": 10,
+    "daemon": {
+      "host": "localhost",
+      "port": 6543,
+      "user": "user",
+      "password": "pass"
+    }
+  },
+  "tlsOptions": {
+    "enabled": true,
+    "serverKey": "../strike/stratum.key",
+    "serverCert": "../strike/stratum.crt",
+    "ca": ""
+ },
+ "ports": {
+        "1690": { //A port for your miners to connect to
+            "diff": 2048, //the pool difficulty for this port
+            /* Variable difficulty is a feature that will automatically adjust difficulty for
+               individual miners based on their hashrate in order to lower networking overhead */
+            "varDiff": {
+                "minDiff": 50, //Minimum difficulty
+                "maxDiff": 50000, //Network difficulty will be used if it is lower than this
+                "targetTime": 7, //Try to get 1 share per this many seconds
+                "retargetTime": 60, //Check to see if we should retarget every this many seconds
+                "variancePercent": 30 //Allow time to very this % from target without retargeting
+		}
+            }
+        },
+  "poolId": "main",
+  "_comment_poolId": "use it for region identification: eu, us, asia or keep default if you have one stratum instance for one coin",
+  "daemons": [
+    {
+      "host": "127.0.0.1",
+      "port": 9999,
+      "user": "rpcuser",
+      "password": "pass@jkjvieh9"
+    }
+  ],
+  "p2p": {
+    "enabled": false,
+    "host": "localhost",
+    "port": 7654,
+    "disableTransactions": true
+  },
+  "mposMode": {
+    "enabled": true,
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "mySQLusername",
+    "password": "mySQLpassword",
+    "database": "beam",
+    "checkPassword": false,
+    "autoCreateWorker": true
+  }
+}

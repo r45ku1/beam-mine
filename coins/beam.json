@@ -1,0 +1,8 @@
+{
+    "name": "BEAM",
+    "symbol": "BEAM",
+    "algorithm": "equihash",
+    "txfee": 0.00005,
+    "peerMagic":"",
+    "peerMagicTestnet":""
+}
