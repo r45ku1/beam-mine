@@ -34,3 +34,12 @@ CREATE TABLE `workers` (
   `time` int(18) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `shares` (
+  `userid` int(11) DEFAULT NULL,   `coinid` int(11) DEFAULT NULL,
+  `time` int(18) DEFAULT NULL,
+ `difficulty` (double) DEFAULT NULL,
+  `sharediff` (double) DEFAULT NULL,
+) ENGINE=InnoDB DEFAULT=19 DEFAULT CHARSET=utf8mb4;
+
