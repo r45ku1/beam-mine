@@ -60,11 +60,11 @@ Once reboot is complete, log into your server again as root and install php-redi
 
 You are now ready to clone the repository which holds all the pool code!
 
-    git clone https://github.com/r45ku1/beam-pool.git
+    git clone https://github.com/r45ku1/beam-mine.git
 
 Go into the beam-pool folder and make sure it's up to date.
 
-    cd beam-pool
+    cd beam-mine
 
     npm update
     
