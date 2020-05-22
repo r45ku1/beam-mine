@@ -266,13 +266,18 @@ Now in your MYSQL third party software (sequelpro or similar) create your tables
     PRIMARY KEY (`id`)
     ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
-
 	CREATE TABLE `shares` (
-	  `userid` int(11) DEFAULT NULL,   `coinid` int(11) DEFAULT NULL,
-	  `time` int(18) DEFAULT NULL,
-	 `difficulty` (double) DEFAULT NULL,
-	  `sharediff` (double) DEFAULT NULL,
-	) ENGINE=InnoDB DEFAULT=19 DEFAULT CHARSET=utf8mb4;
+  	`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  	`coinid` int(11) DEFAULT NULL,
+  	`userid` int(11) DEFAULT NULL,
+  	`blockhash` varchar(64) DEFAULT NULL,
+  	`height` int(11) DEFAULT NULL,
+  	`difficulty` double DEFAULT NULL,
+  	`sharediff` double DEFAULT NULL,
+  	`workerid` int(96) DEFAULT NULL,
+  	`time` int(18) DEFAULT NULL,
+  	PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=68248 DEFAULT CHARSET=utf8mb4;
 
 EDIT YOUR CONFIGURATION FILES
 
