@@ -22,20 +22,25 @@
     "serverCert": "../strike/stratum.crt",
     "ca": ""
  },
- "ports": {
+"ports": {
         "1690": { //A port for your miners to connect to
-            "diff": 2048, //the pool difficulty for this port
+            "diff": 200, //the pool difficulty for this port
+
             /* Variable difficulty is a feature that will automatically adjust difficulty for
                individual miners based on their hashrate in order to lower networking overhead */
             "varDiff": {
-                "minDiff": 50, //Minimum difficulty
+                "minDiff": 10, //Minimum difficulty
                 "maxDiff": 50000, //Network difficulty will be used if it is lower than this
-                "targetTime": 7, //Try to get 1 share per this many seconds
+                "targetTime": 5, //Try to get 1 share per this many seconds
                 "retargetTime": 60, //Check to see if we should retarget every this many seconds
                 "variancePercent": 30 //Allow time to very this % from target without retargeting
-		}
             }
         },
+        "1974": { //Another port for your miners to connect to, this port does not use varDiff
+            "diff": 2048 //The pool difficulty
+        }
+    },
+
   "poolId": "main",
   "_comment_poolId": "use it for region identification: eu, us, asia or keep default if you have one stratum instance for one coin",
   "daemons": [
@@ -56,7 +61,7 @@
     "enabled": true,
     "host": "127.0.0.1",
     "port": 3306,
-    "user": "mySQLusername",
+    "user": "mySQLuser",
     "password": "mySQLpassword",
     "database": "beam",
     "checkPassword": false,

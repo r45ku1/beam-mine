@@ -99,11 +99,7 @@ module.exports = function(logger, portalConfig, poolConfigs) {
   async function setupMysqlConnection() {
     this.connection = await mysql.createConnection({
       host: '127.0.0.1',
-<<<<<<< HEAD
       user: 'mySQLuser',
-=======
-      user: 'mySQLusername',
->>>>>>> 41ac04f0f74e5097e7756c78ae6efd15f3f427dd
       password: 'mySQLpassword',
       database: 'beam',
     });
