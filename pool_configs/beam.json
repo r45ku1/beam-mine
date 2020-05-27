@@ -61,8 +61,8 @@
     "enabled": true,
     "host": "127.0.0.1",
     "port": 3306,
-    "user": "mySQLuser",
-    "password": "mySQLpassword",
+    "user": "mysqluser",
+    "password": "mysqlpassword",
     "database": "beam",
     "checkPassword": false,
     "autoCreateWorker": true
