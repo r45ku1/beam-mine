@@ -228,57 +228,83 @@ And confirm your new user has privileges
 
 Now in your MYSQL third party software (sequelpro or similar) create your tables within a new database 'beam'
 
-    CREATE TABLE `accounts` (
-    `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-    `coinid` int(11) DEFAULT NULL,
-    `username` varchar(96) DEFAULT NULL,
-    `ip` varchar(96) DEFAULT NULL,
-    PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+	CREATE TABLE `accounts` (
+	  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+	  `coinid` int(11) DEFAULT NULL,
+	  `username` varchar(96) DEFAULT NULL,
+	  `ip` varchar(96) DEFAULT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
-   	CREATE TABLE `blocks` (
-  	`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  	`coinid` int(11) DEFAULT NULL,
-  	`time` int(18) DEFAULT NULL,
-  	`userid` int(11) DEFAULT NULL,
-  	`workerid` int(11) DEFAULT NULL,
-  	`height` int(11) DEFAULT NULL,
-  	`paid` tinyint(1) DEFAULT NULL,
-  	`paid_at` timestamp NULL DEFAULT NULL,
-  	`sharediff` float DEFAULT NULL,
-  	`blockdiff` float DEFAULT NULL,
-  	`confirmations` float DEFAULT NULL,
-  	`difficulty` float DEFAULT NULL,
-  	`blockhash` varchar(64) DEFAULT NULL,
-  	`reward` float DEFAULT NULL,
-  	`category` varchar(32) DEFAULT NULL,
-  	`jobid` int(11) DEFAULT NULL,
-  	PRIMARY KEY (`id`)
-	) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
+	CREATE TABLE `blocks` (
+	  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+	  `coinid` int(11) DEFAULT NULL,
+ 	 `time` int(18) DEFAULT NULL,
+	  `userid` int(11) DEFAULT NULL,
+	  `workerid` int(11) DEFAULT NULL,
+	  `height` int(11) DEFAULT NULL,
+	  `paid` tinyint(1) DEFAULT NULL,
+	  `paid_at` int(96) DEFAULT NULL,
+	  `sharediff` float DEFAULT NULL,
+	  `blockdiff` float DEFAULT NULL,
+	  `confirmations` float DEFAULT NULL,
+	  `difficulty` float DEFAULT NULL,
+	  `blockhash` varchar(64) DEFAULT NULL,
+	  `reward` float DEFAULT NULL,
+	  `category` varchar(32) DEFAULT NULL,
+	  `jobid` int(11) DEFAULT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=utf8mb4;
 
-    CREATE TABLE `workers` (
-        `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-        `userid` int(11) DEFAULT NULL,
-        `ip` varchar(96) DEFAULT NULL,
-        `name` varchar(96) DEFAULT NULL,
-        `difficulty` int(11) DEFAULT NULL,
-        `rigname` varchar(32) DEFAULT NULL,
-        `time` int(18) DEFAULT NULL,
-    PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+	CREATE TABLE `payments` (
+	  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+	  `to_address` varchar(255) DEFAULT NULL,
+	  `block_height` int(11) DEFAULT NULL,
+	  `timestamp` int(11) DEFAULT NULL,
+	  `txId` varchar(64) DEFAULT NULL,
+	  `status` varchar(64) DEFAULT NULL,
+	  `fee` bigint(20) DEFAULT NULL,
+	  `withdrawal_fee` bigint(20) DEFAULT NULL,
+	  `value` bigint(20) DEFAULT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4;
 
 	CREATE TABLE `shares` (
-  	`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  	`coinid` int(11) DEFAULT NULL,
-  	`userid` int(11) DEFAULT NULL,
-  	`blockhash` varchar(64) DEFAULT NULL,
-  	`height` int(11) DEFAULT NULL,
-  	`difficulty` double DEFAULT NULL,
-  	`sharediff` double DEFAULT NULL,
-  	`workerid` int(96) DEFAULT NULL,
-  	`time` int(18) DEFAULT NULL,
-  	PRIMARY KEY (`id`)
-	) ENGINE=InnoDB AUTO_INCREMENT=68248 DEFAULT CHARSET=utf8mb4;
+	  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+	  `coinid` int(11) DEFAULT NULL,
+	  `userid` int(11) DEFAULT NULL,
+	  `blockhash` varchar(64) DEFAULT NULL,
+	  `height` int(11) DEFAULT NULL,
+	  `difficulty` double DEFAULT NULL,
+	  `sharediff` double DEFAULT NULL,
+	  `workerid` int(96) DEFAULT NULL,
+ 	 `time` int(18) DEFAULT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=2000 DEFAULT CHARSET=utf8mb4;
+
+	CREATE TABLE `txs` (
+ 	 `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+ 	 `txId` varchar(64) DEFAULT NULL,
+ 	 `timestamp` int(11) DEFAULT NULL,
+ 	 `sender` varchar(255) DEFAULT NULL,
+ 	 `receiver` varchar(255) DEFAULT NULL,
+ 	 `kernel` varchar(255) DEFAULT NULL,
+ 	 `status` varchar(64) DEFAULT NULL,
+ 	 `fee` int(64) DEFAULT NULL,
+ 	 `value` int(64) DEFAULT NULL,
+ 	 PRIMARY KEY (`id`)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+	CREATE TABLE `workers` (
+	  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+	  `userid` int(11) DEFAULT NULL,
+	  `ip` varchar(96) DEFAULT NULL,
+	  `name` varchar(96) DEFAULT NULL,
+	  `difficulty` int(11) DEFAULT NULL,
+	  `rigname` varchar(32) DEFAULT NULL,
+ 	 `time` int(18) DEFAULT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
 
 EDIT YOUR CONFIGURATION FILES
 
