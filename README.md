@@ -1,5 +1,7 @@
 # BEAM OPEN SOURCE POOL GUIDE 
-(All credit to Greg of https://icemining.ca for his excellent efforts)
+BEAM OPEN SOURCE POOL GUIDE
+
+(Credit to https://twitter.com/icemining for the excellent efforts in building the stratum and pool, https://twitter.com/vsnation_ for his fantastic job in building the unique BASiC payment processor and to https://twitter.com/Lolliedieb for his hand in updating the Beamhashverify to work flawlessly with BeamHashIII)
 
 Open Source Beam Pool Software w/ Guide
 DISCLAIMER: The Beam open source pool comes with no warranty and it is the sole responsibility of the user to ensure the functions and design of their own deployment, meet the required standards which a crypto-miner would expect to see in a mining pool. Where the code is complete in-as-much as the pool stratum, API and a barebones deployment of the GUI is functional and working, it is also the responsibility of the user to ensure that you have adept knowledge in pool systems.
