@@ -11,8 +11,8 @@ const api = 'http://127.0.0.1:666';
 module.exports = async function() {
   const connection = await mysql.createConnection({
     host: '127.0.0.1',
-    user: 'mySQLuser',
-    password: 'mySQLpassword',
+    user: 'mysqluser',
+    password: 'mysqlpassword',
     database: 'beam',
   });
   const [blocks, fields] = await connection.execute(`SELECT * FROM blocks`);

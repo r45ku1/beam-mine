@@ -99,8 +99,8 @@ module.exports = function(logger, portalConfig, poolConfigs) {
   async function setupMysqlConnection() {
     this.connection = await mysql.createConnection({
       host: '127.0.0.1',
-      user: 'mySQLuser',
-      password: 'mySQLpassword',
+      user: 'mysqluser',
+      password: 'mysqlpassword',
       database: 'beam',
     });
   }
@@ -513,8 +513,6 @@ module.exports = function(logger, portalConfig, poolConfigs) {
 		}
               });
 	      getNodeHeight();
-	      console.log('blocks', blocks);
-              console.log('repl', replies);
 
               var coinStats = {
                 name: coinName,
