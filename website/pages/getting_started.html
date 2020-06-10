@@ -178,6 +178,14 @@
     #coinInfoClose:hover{
         color: #50f0e3;
     }
+.tg  {border-collapse:collapse;border-spacing:1;}
+.tg td{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:center;vertical-align:top}
 </style>
 
 <div id="holder">
@@ -227,24 +235,52 @@
     </div>
 
     <div id="main">
-        <a href="https://raskul.com">
-            <div class="miningOptionNum">1.</div>
+            <div><h1> <a href="https://beam.mw/mining" target="_blank">MINE BEAM</a></h1></div>
             <div class="miningOptionInstructions">
-                <div>FOR NVIDIA GPU</div>
-                <div>Easy guide setting up mining on Nvidia GPU</div>
+<div>           
             </div>
-        </a>
-        <div id="orHolder">
-            <div id="orLine"></div>
-            <div id="orText">or</div>
-        </div>
-        <a href="https://raskul.com">
-            <div class="miningOptionNum">2.</div>
-            <div class="miningOptionInstructions">
-                <div>FOR AMD GPU</div>
-                <div>Easy guide setting up mining on AMD GPU</div>
-            </div>
-        </a>
+The above link takes you to www.beam.mw/mining which has a mining calculator and various other resources to assist with your Beam mining. For a quickstart guide, please click the link on the left to see pool connection information.
+
+</p>
+</p>
+
+<center>
+            <h1>Mining software</h1>
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">NVIDIA GPU CARDS</th>
+    <th class="tg-amwm">AMD GPU CARDS</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"><img src="/static/nvidia-logo-mirror.png" alt="Nvidia Logo" width="192" height="75"></td>
+    <td class="tg-0lax"><img src="/static/bsps-amd-logo.png" alt="AMD Logo" width="192" height="63"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><a href="https://miniz.ch/download/" target="_blank" rel="noopener noreferrer">MiniZ</a></td>
+    <td class="tg-0lax"><a href="https://github.com/Lolliedieb/lolMiner-releases/releases" target="_blank" rel="noopener noreferrer">LolMiner</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><a href="https://github.com/develsoftware/GMinerRelease/releases" target="_blank" rel="noopener noreferrer">Gminer</a></td>
+    <td class="tg-0lax"><a href="https://github.com/develsoftware/GMinerRelease/releases" target="_blank" rel="noopener noreferrer">Gminer</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><a href="https://github.com/Lolliedieb/lolMiner-releases/releases" target="_blank" rel="noopener noreferrer">LolMiner</a></td>
+    <td class="tg-0lax"><a href="https://www.bminer.me/releases/" target="_blank" rel="noopener noreferrer">Bminer</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><a href="https://www.bminer.me/releases/" target="_blank" rel="noopener noreferrer">Bminer</a></td>
+    <td class="tg-0lax"><a href="https://builds.beam.mw/BeamHashIII/2020.05.04/Release/win/opencl-miner-1.0.81.zip" target="_blank" rel="noopener noreferrer">OpenCL</a></td>
+  </tr>
+</tbody>
+</table>
+</center>                            </div>
+
+
+
     </div>
 </div>
 
@@ -274,7 +310,7 @@
 
         for (var port in info.ports){
             htmlKeys += '<div class="coinInfoData">URL <span class="coinInfoSubtle">(difficulty ' + info.ports[port].diff + ')</span>:</div>';
-            htmlValues += '<div class="coinInfoData">stratum+tcp://' + info.host + ':' + port + '</div>';
+            htmlValues += '<div class="coinInfoData">stratum+tcp://' + 'pool.raskul.com' + ':' + port + '</div>';
         }
 
         if (info.coin)

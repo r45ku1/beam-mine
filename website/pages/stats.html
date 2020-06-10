@@ -112,11 +112,10 @@
     </div>
     <div class="pure-u-1-2">
         <div class="boxStats" id="boxStatsRight">
-            <div class="boxLowerHeader">{{=capitalizeFirstLetter(it.stats.pools[pool].name)}} Network Stats</div>
+            <div class="boxLowerHeader">{{=capitalizeFirstLetter(it.stats.pools[pool].name)}} Block Height</div>
             <div class="boxStatsList">
                 <div>
                     <div><i class="fa fa-bars" aria-hidden="true"></i><small>Block Height:</small> <span id="statsNetworkBlocks{{=pool}}">{{=it.stats.pools[pool].poolStats.networkBlocks}}</span></div>
-                    <div><i class="fa fa-tachometer"></i><small>Network Hash/s:</small> <span id="statsNetworkSols{{=pool}}">{{=it.stats.pools[pool].poolStats.networkSolsString}}</span></div>
                 </div>
             </div>
         </div>
@@ -189,13 +188,6 @@
     </div>
 </div>
 
-<center><div id="bottomCharts{{=pool}}" style="text-align:center;" align="center">
-    <div class="chartWrapper" style="text-align:center;">
-        <div class="chartLabel">Finders of the last {{=blockscomb.length}} blocks</div>
-        <div class="hidden" id="tooltip{{=pool}}"><p><span id="value{{=pool}}"></span> blocks found by <span id="finderr{{=pool}}"></span></p></div>
-        <div class="chartHolder" id="pie{{=pool}}"><svg id="blocksPie{{=pool}}" style="display: block; margin: auto; text-align:center;"/></div>
-    </div>
-</div></center>
 
 <script>
 

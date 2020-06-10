@@ -351,7 +351,26 @@ module.exports = function(logger, portalConfig, poolConfigs) {
     var totalHeld = parseFloat(0);
     var totalPaid = parseFloat(0);
     var totalImmature = parseFloat(0);
-
+    console.log('RESPONSE', a);
+    connection.execute(
+      "SELECT * FROM payments WHERE to_address='" + a + "'",
+       function(err, results) {
+           for (var i = 0; i < results.length; i++) {
+               if (results[i]['status'] == "CANCELLED" || results[i]['status'] == "PENDING") {
+               	totalHeld += results[i]['value'] / 100000000
+               } else if (results[i]['status'] == "SENT_VERIFIED") {
+               	totalPaid += results[i]['value'] / 100000000
+               }
+         
+           }
+//	   balances.push({           
+//                worker: String(a),
+//                balance: totalHeld,
+//                paid: totalPaid,
+//                immature: totalImmature
+//	   })
+       }
+     );
     async.each(
       _this.stats.pools,
       function(pool, pcb) {
@@ -422,7 +441,6 @@ module.exports = function(logger, portalConfig, poolConfigs) {
 
         _this.stats.balances = balances;
         _this.stats.address = address;
-
         cback({
           totalHeld: coinsRound(totalHeld),
           totalPaid: coinsRound(totalPaid),
@@ -500,6 +518,7 @@ module.exports = function(logger, portalConfig, poolConfigs) {
               console.log('block stats', blockStats);
               let formattedBlocks = [];
 	      let blocksStats = {'pending': 0, 'confirmed': 0, 'orphaned': 0}
+	      let blocks_list = {'pending': [], 'confirmed': []}
               blocks.forEach(block => {
                 formattedBlocks.push([block.confirmations, block.blockdiff, block.height, '', block.time].join(':'));
 		if (block.category == "orphan") {
@@ -507,12 +526,16 @@ module.exports = function(logger, portalConfig, poolConfigs) {
 		} else {
 		  if (block.confirmations > 240) {
 		    blocksStats['confirmed'] = blocksStats['confirmed'] + 1
+   		    blocks_list['confirmed'].push(block)
 		  } else {
 		    blocksStats['pending'] = blocksStats['pending'] + 1
+	            blocks_list['pending'].push(block)
 		  }
 		}
               });
 	      getNodeHeight();
+	      console.log("Repl 1 + 6", replies[i + 6]);
+	      console.log("Repl 1 + 6", replies[i + 7]);
 
               var coinStats = {
                 name: coinName,

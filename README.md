@@ -1,20 +1,22 @@
 # BEAM OPEN SOURCE POOL GUIDE 
-(All credit to Greg of https://icemining.ca for his excellent efforts)
+(With credit to Greg of Icemining Pools for his excellent efforts in building the stratum and pool, Lolliedieb for the Beamhashverify to enable this pool to switch between BeamHashI, BeamHashII and BeamHashIII and also to VSnation for the magically unique BASiC payment processor)
 
 Open Source Beam Pool Software w/ Guide
-DISCLAIMER: The Beam open source pool comes with no warranty and it is the sole responsibility of the user to ensure the functions and design of their own deployment, meet the required standards which a crypto-miner would expect to see in a mining pool. Where the code is complete in-as-much as the pool stratum, API and a barebones deployment of the GUI is functional and working, it is also the responsibility of the user to ensure that you have adept knowledge in pool systems.
 
-The pool software is offered without a coin distribution function and this part is the sole responsibility of the user to add to the existing code. This part is deliberately omitted from the code to allow the user to determine which method payout they wish to utilise (PROP, PPS, PPLNS etc etc). By installing the pool software in this guide, you fully agree to these terms, and assure your prospective miners that you are able to create your own Beam distribution method.
+By installing the pool software and BASiC Payment processor from this guide, you fully agree to this following disclaimer:
 
-My testing pool is at https://pool.raskul.com/ - you can see what you will get by navigating to this link.
+DISCLAIMER: This Beam open source pool software comes with no warranty and it is the sole responsibility of the user to ensure the functions and design of their own deployment, meet the required standards which a cryptocurrency miner would expect to see in a mining pool. Where the code is complete in-as-much as the pool stratum, API and a barebones deployment of the GUI is functional and working, it is also the responsibility of the user to ensure that they have adept knowledge in pool systems. 
+This code is offered freely under MIT licencing and the authors, host and publishers will hold no responsibility, nor support for installation or troubleshooting.
 
-If you want to make any kind of donation to me for my ongoing guides, please point a GPU to 94.130.104.164:1690
+The pool software is also now offered with Beam's BASiC rewards distribution function and this part is contained in accompanying repository, with it's own README file and same disclaimer above applies.
+
+A testing pool built from this software can be found at https://pool.raskul.com/ - so, you can see what you will get by navigating to this link.
 
 All OK with that? then read on...
 
-To begin compiling the Beam open source pool software, you will need to find a suitable VPS (Virtual Private Server) from a respectable hosting company. On the BEAM ACCEPTED HERE pages you can find a few who accept Beam for their services.
+To begin compiling the Beam open source pool software, you will need to find a suitable VPS (Virtual Private Server) from a respectable hosting company. On the <a href="https://beam.mw/beam-accepted-here" target="_blank">BEAM ACCEPTED HERE</a> pages you can find a few who accept Beam for their services.
 
-Once you have found a VPS, please log in as ROOT and you can start to set up the pool.
+Once you have found a VPS, please log in and you can start to set up the pool.
 
 Firstly update your server.
 
@@ -308,7 +310,7 @@ Now in your MYSQL third party software (sequelpro or similar) create your tables
 
 EDIT YOUR CONFIGURATION FILES
 
-LOCATION: beam-pool/config.json
+LOCATION: beam-mine/config.json
 
 should be amended in the REDIS sections
 
@@ -326,7 +328,7 @@ and in the website section, to reflect the IP of the VPS upon which you are inst
         "stratumHost": "94.130.104.164",
         "stats": {
 
-2. LOCATION beam-pool/pool_configs/beam.json
+2. LOCATION beam-mine/pool_configs/beam.json
 amend to specify the path to your stratum.key and stratum.crt
 
         },
@@ -350,7 +352,7 @@ and in the MYSQL section (mposMode section) this should reflect the newMYSQLuser
         "autoCreateWorker": true
         }
 
-3. LOCATION beam-pool/libs/beam-blockconf.js
+3. LOCATION beam-mine/libs/beam-blockconf.js
 amend const=api and the MYSQL pieces
 
         const coinid = 2423;
@@ -364,7 +366,7 @@ amend const=api and the MYSQL pieces
         password: 'MYSQLpassword',
         database: 'beam',
 
-4. LOCATION beam-pool/libs/stats.js
+4. LOCATION beam-mine/libs/stats.js
 amend the MYSQLconnection here;
 
         async function setupMysqlConnection() {
@@ -432,9 +434,7 @@ Your (very basic) pool GUI will then be publicly accessible from
 
 http://YOUR_POOL_IP:8010
 
-It is now your own responsibility to add in a payment distribution mechanism, and tidy up your GUI to report all the sections you want to show, we have done most of the work, so as previously mentioned, you need to do the rest.
+If you wish to utilise it, you can now set up <a href="https://github.com/r45ku1/basic">the BASiC Payment Processor from this link</a>.
 
-Again, with massive thanks to Greg of https://www.icemining.ca for his brilliant work in making all of this possible.
-Released with no warranty and no support assistance. 
+All code released with no warranty and no support assistance. 
 
-Raskul.

@@ -1,8 +1,9 @@
 <style>
     #boxWelcome{
-        background-color: #0eafc7;
+background-image: url("/static/bckgbox.png");
+  background-size: fit;
         color: white;
-        margin: 18px;
+        margin: 0px;
   }
     #bannerImg{
         height: 50px;
@@ -24,27 +25,30 @@
 
     #welcomeText{
         font-size: 2.7em;
-        margin: 50px 18px 10px 85px;
+        margin: 18px 18px 18px 18px;
+	text-shadow: 0 0 5px #FF0000, 0 0 5px #0000FF;
     }
     #welcomeItems{
         list-style-type: none;
         font-size: 1.3em;
         padding: 0 !important;
-        margin: 0 0 0 65px !important;
+        margin: 18px 18px 18px 18px !important;
+	text-shadow: 0 0 5px #FF0000, 0 0 5px #0000FF;
+
     }
     #welcomeItems > li{
-        margin: 18px !important;
+        margin: 18px 0px 0px !important;
     }
     #boxesLower {
-        margin: 0 9px;
+        margin: 0px 0px;
     }
     #boxesLower > div {
         display: flex;
     }
     #boxesLower > div > div {
         flex: 1 1 auto;
-        margin: 0 9px 18px 9px;
-        padding: 10px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
         display: flex;
         flex-direction: column;
     }
@@ -55,10 +59,11 @@
 
 
     #boxStatsLeft{
-        background-color: #b064e1;
+        background-color: #041d3c;
+
     }
     #boxStatsRight{
-        background-color: #10bb9c;
+      background-color: #041d3c;
     }
     .boxStats{
         color: white;
@@ -93,13 +98,13 @@
         <img id="logoImg" src="/static/logo.png">
     </div>
     <div class="pure-u-2-3">
-        <div id="welcomeText"><a href="https://www.beam.mw" target="_blank"><img id="bannerImg" src="/static/beam.png"></a>
+        <div id="welcomeText">BEAM MINING POOL</br>
 	</div>
         <ul id="welcomeItems">
 	    <li>var-diff (single rig) : pool.raskul.com:1690</li>
             <li>high-diff (farms/rentals) : pool.raskul.com:1974</li>
 		<li>Miner rewards sent automatically on confirmed</li>
-		<li>block using the <a href="https://www.raskul.com/basic-beam-anonymous-shares-in-calculation/">BASiC</a> mining rewards system</li>
+		<li>block using the BASiC mining rewards system</li>
     </div>
 </div>
 
@@ -107,13 +112,12 @@
 
     <div class="pure-u-1-2">
         <div class="boxStats" id="boxStatsLeft">
-            <div class="boxLowerHeader">Global Stats</div>
+            <div class="boxLowerHeader">Mining Algo</div>
             <div class="boxStatsList">
                 {{ for(var algo in it.stats.algos) { }}
                 <div>
                     <div><i class="fa fa-flask"></i>{{=algo}}</div>
-                    <div><i class="fa fa-users"></i><span id="statsMiners{{=algo}}">{{=it.stats.algos[algo].workers}}</span> Miners</div>
-                    <div><i class="fa fa-tachometer"></i><span id="statsHashrate{{=algo}}">{{=it.stats.algos[algo].hashrateString}}</span></div>
+
                 </div>
                 {{ } }}
             </div>
@@ -122,13 +126,13 @@
 
     <div class="pure-u-1-2">
         <div class="boxStats" id="boxStatsRight">
-            <div class="boxLowerHeader">Pools / Coins</div>
+            <div class="boxLowerHeader">Pool Info</div>
             <div class="boxStatsList">
                 {{ for(var pool in it.stats.pools) { }}
                 <div>
-                    <div><i class="fa fa-dot-circle-o"></i>{{=pool}}</div>
-                    <div><i class="fa fa-users"></i><span id="statsMiners{{=pool}}">{{=it.stats.pools[pool].workerCount}}</span> Miners</div>
-                    <div><i class="fa fa-tachometer"></i><span id="statsHashrate{{=pool}}">{{=it.stats.pools[pool].hashrateString}}</span></div>
+		<div><i class="fa fa-money"></i> Pool Fee: 1% </div>
+		<div><i class="fa fa-users"></i><span id="statsMiners{{=algo}}">{{=it.stats.algos[algo].workers}}</span> Miners</div>
+                <div><i class="fa fa-tachometer"></i><span id="statsHashrate{{=pool}}">{{=it.stats.pools[pool].hashrateString}}</span></div>
                 </div>
                 {{ } }}
             </div>
