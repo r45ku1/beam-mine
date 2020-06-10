@@ -1,7 +1,7 @@
 {
     "name": "BEAM",
     "symbol": "BEAM",
-    "algorithm": "BeamHash",
+    "algorithm": "equihash",
     "txfee": 0.00005,
     "peerMagic":"",
     "peerMagicTestnet":""
