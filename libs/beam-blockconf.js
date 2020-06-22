@@ -20,7 +20,7 @@ module.exports = async function() {
   for (const block of blocks) {
     try {
       const apiBlock = JSON.parse(await request.get(`${api}/block?height=${block.height}`));
-      console.log("height " + block.height + " hash :" + apiBlock.hash);
+//      console.log("height " + block.height + " hash :" + apiBlock.hash);
       if (typeof apiBlock === 'undefined' || (!apiBlock || !apiBlock.hash)) {
 	console.log("hash not found in API, skipping");
 	continue;
@@ -28,7 +28,7 @@ module.exports = async function() {
       if (block.blockhash == apiBlock.hash) {
         // If they equal update conf count
         const difference = data.height - block.height;
-        console.log('Block Height Confirmed: ', block.height, difference, `${difference >= confirmations}`.yellow);
+//        console.log('Block Height Confirmed: ', block.height, difference, `${difference >= confirmations}`.yellow);
         // if conf count >= 1440 mark as generated
 
 	if (difference >= confirmations) {
@@ -38,13 +38,13 @@ module.exports = async function() {
             block.id,
           ]);
         } else {
-	  console.log("updating blocks confirms " + difference + " for block " + block.id);
+//	  console.log("updating blocks confirms " + difference + " for block " + block.id);
           await connection.execute('UPDATE blocks SET confirmations = ? WHERE id = ?', [difference, block.id]);
         }
 
       } else {
         // Set block to orphan
-        console.log(`Block ${block.height} ORPHAN`.red, block.blockhash, apiBlock.hash);
+//        console.log(`Block ${block.height} ORPHAN`.red, block.blockhash, apiBlock.hash);
         await connection.execute('UPDATE blocks SET category = ? WHERE id = ?', ['orphan', block.id]);
       }
     } catch (e) {

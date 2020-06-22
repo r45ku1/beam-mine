@@ -324,9 +324,9 @@ module.exports = function(logger, portalConfig, poolConfigs) {
         height
         FROM blocks ORDER BY height DESC LIMIT 50`,
 	function(err, results, fields) {
-	  console.log(results);
+//	  console.log(results);
 	  last_mined_block = results[0].height;
-	  console.log(last_mined_block);
+//	  console.log(last_mined_block);
 	}
     );
     getNodeHeight();
@@ -336,7 +336,7 @@ module.exports = function(logger, portalConfig, poolConfigs) {
 
   function getNodeHeight() {
     request('http://127.0.0.1:666/status', {json: true}, (err, res, body) => {
-      console.log('NODE STATUS RESPONSE', body);
+//      console.log('NODE STATUS RESPONSE', body);
       node_height = body.height;
     }) 
   }
@@ -351,7 +351,7 @@ module.exports = function(logger, portalConfig, poolConfigs) {
     var totalHeld = parseFloat(0);
     var totalPaid = parseFloat(0);
     var totalImmature = parseFloat(0);
-    console.log('RESPONSE', a);
+//    console.log('RESPONSE', a);
     connection.execute(
       "SELECT * FROM payments WHERE to_address='" + a + "'",
        function(err, results) {
@@ -515,7 +515,7 @@ module.exports = function(logger, portalConfig, poolConfigs) {
                     SUM(case when confirmations > 20 then 1 else 0 end) AS validBlocks
                   FROM blocks ORDER BY height`,
               );
-              console.log('block stats', blockStats);
+//              console.log('block stats', blockStats);
               let formattedBlocks = [];
 	      let blocksStats = {'pending': 0, 'confirmed': 0, 'orphaned': 0}
 	      let blocks_list = {'pending': [], 'confirmed': []}
@@ -534,8 +534,8 @@ module.exports = function(logger, portalConfig, poolConfigs) {
 		}
               });
 	      getNodeHeight();
-	      console.log("Repl 1 + 6", replies[i + 6]);
-	      console.log("Repl 1 + 6", replies[i + 7]);
+	//      console.log("Repl 1 + 6", replies[i + 6]);
+	//      console.log("Repl 1 + 6", replies[i + 7]);
 
               var coinStats = {
                 name: coinName,

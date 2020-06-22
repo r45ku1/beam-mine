@@ -180,7 +180,8 @@ Whilst still within a text editor in beam-node.cfg, locate each of the below lin
     port=10127
     log_level=verbose
     file_log_level=verbose
-    peer=pool.raskul.com;10127,helsinki.raskul.com:10127,beijing.raskul.com:10127,nuremberg.raskul.com:10127,paris.raskul.com:10127,sydney.raskul.com:10127, london.raskul.com:10127,tokyo.raskul.com:10127,silicon-valley.raskul.com:10127. toronto.raskul.com:10127,eu-nodes.mainnet.beam.mw:8100,us-nodes.mainnet.beam.mw:8100,ap-nodes.mainnet.beam.mw:8100
+    peer=node01.mainnet.beam.mw:8100,eu-node02.mainnet.beam.mw:8100,eu-node03.mainnet.beam.mw:8100,eu-node04.mainnet.beam.mw:8100,us-node01.mainnet.beam.mw:8100,us-node02.mainnet.beam.mw:8100,us-node03.mainnet.beam.mw:8100,us-node04.mainnet.beam.mw:8100,ap-node01.mainnet.beam.mw:8100,ap-node02.mainnet.beam.mw:8100,ap-node03.mainnet.beam.mw:8100,ap-node04.mainnet.beam.mw:8100,ap-hk-node01.mainnet.beam.mw:8100,ap-hk-node02.mainnet.beam.mw:8100,ap-hk-node03.mainnet.beam.mw:8100,ap-hk-node04.mainnet.beam.mw:8100
+    peers_persistent=1
     stratum_port=3333
     stratum_secrets_path=./stratum_secrets/
 

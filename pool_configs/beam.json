@@ -24,7 +24,7 @@
  },
 "ports": {
         "1690": { //A port for your miners to connect to
-            "diff": 200, //the pool difficulty for this port
+            "diff": 50, //the pool difficulty for this port
 
             /* Variable difficulty is a feature that will automatically adjust difficulty for
                individual miners based on their hashrate in order to lower networking overhead */
