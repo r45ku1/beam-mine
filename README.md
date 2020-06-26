@@ -259,19 +259,6 @@ Now in your MYSQL third party software (sequelpro or similar) create your tables
 	  PRIMARY KEY (`id`)
 	) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=utf8mb4;
 
-	CREATE TABLE `payments` (
-	  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-	  `to_address` varchar(255) DEFAULT NULL,
-	  `block_height` int(11) DEFAULT NULL,
-	  `timestamp` int(11) DEFAULT NULL,
-	  `txId` varchar(64) DEFAULT NULL,
-	  `status` varchar(64) DEFAULT NULL,
-	  `fee` bigint(20) DEFAULT NULL,
-	  `withdrawal_fee` bigint(20) DEFAULT NULL,
-	  `value` bigint(20) DEFAULT NULL,
-	  PRIMARY KEY (`id`)
-	) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4;
-
 	CREATE TABLE `shares` (
 	  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
 	  `coinid` int(11) DEFAULT NULL,
@@ -284,19 +271,6 @@ Now in your MYSQL third party software (sequelpro or similar) create your tables
  	 `time` int(18) DEFAULT NULL,
 	  PRIMARY KEY (`id`)
 	) ENGINE=InnoDB AUTO_INCREMENT=2000 DEFAULT CHARSET=utf8mb4;
-
-	CREATE TABLE `txs` (
- 	 `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
- 	 `txId` varchar(64) DEFAULT NULL,
- 	 `timestamp` int(11) DEFAULT NULL,
- 	 `sender` varchar(255) DEFAULT NULL,
- 	 `receiver` varchar(255) DEFAULT NULL,
- 	 `kernel` varchar(255) DEFAULT NULL,
- 	 `status` varchar(64) DEFAULT NULL,
- 	 `fee` int(64) DEFAULT NULL,
- 	 `value` int(64) DEFAULT NULL,
- 	 PRIMARY KEY (`id`)
-	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 	CREATE TABLE `workers` (
 	  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
