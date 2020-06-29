@@ -12,7 +12,7 @@
 
     "defaultPoolConfigs": {
         "blockRefreshInterval": 0,
-        "jobRebroadcastTimeout": 720,
+        "jobRebroadcastTimeout": 900,
         "connectionTimeout": 200,
         "emitInvalidBlockHashes": false,
         "validateWorkerUsername": false,

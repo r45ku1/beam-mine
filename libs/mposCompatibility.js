@@ -19,7 +19,7 @@ module.exports = function(logger, poolConfig) {
   });
 
   const query = (...args) => {
-	  console.log("query " + JSON.stringify(args));
+//	  console.log("query " + JSON.stringify(args));
     return new Promise((resolve, reject) => {
       connection.query(args[0], args[1], function(err, result) {
         if (err) reject(err);
@@ -35,7 +35,7 @@ module.exports = function(logger, poolConfig) {
     var ports = Object.keys(poolConfig.ports);
     const pid = process.env.pid;
     const timestamp = Math.round(+new Date() / 1000);
-    const algo = 'beamHashII'; // poolConfig.coin.algorithm;
+    const algo = 'beamHashIII'; // poolConfig.coin.algorithm;
     // const url = "url";
     const port = ports[0];
     const symbol = poolConfig.coin.symbol;
