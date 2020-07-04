@@ -351,6 +351,34 @@ amend the MYSQLconnection here;
         password: 'MYSQLpassword',
         database: 'beam',
 
+INSTALL THE WALLET-API
+
+From the web page at https://github.com/BeamMW/beam/releases find the most recent version of the Linux Explorer Node
+
+    wget https://github.com/BeamMW/beam/releases/download/WALLET-API.tar.gz
+
+    tar -xvf WALLET-API.tar.gz
+
+Amend the configuration file within this folder as follows
+
+    nano wallet-api.cfg 
+
+Amend the password to match your owner key password
+
+    pass=yourpassword
+
+node address to listen the api server on
+
+    node_addr=127.0.0.1:101274
+
+port to start server on
+
+    port=11111
+
+use JSON RPC over http
+
+    use_http=1
+
 INSTALL THE EXPLORER-NODE (API)
 
 From the web page at https://github.com/BeamMW/beam/releases find the most recent version of the Linux Explorer Node
