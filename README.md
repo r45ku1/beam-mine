@@ -421,7 +421,11 @@ Once powered up and logged in, make sure you have your node 100% synch and scree
 
 Navigate into your beam-explorer folder and run the API using. the following command:
 
-    screen -dmS API ./explorer-node
+    screen -dmS EXPLORER ./explorer-node
+    
+Run the wallet API:
+
+    screen -dmS API ./wallet-api   
 
 Set up your wallet listener from within the beam-node folder:
 
