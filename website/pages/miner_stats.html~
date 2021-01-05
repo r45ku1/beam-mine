@@ -86,11 +86,10 @@
 		</div>
 		<div class="chartHolder"><svg id="workerHashrate" /></div>
 		<div>
- <div style="float:right; padding-top: 9px; padding-right: 18px;"><i class="fa fa-cog"></i> Shares: <span id="statsTotalShares">...</span></div>
-                <div style="float:left; padding-top: 9px; padding-left: 18px; padding-right: 18px;"><i class="fa fa-money"></i> Pending: <span id="statsTotalBal">...</span>  </div>
-                <div style="padding-top: 9px; padding-left: 18px;"><i class="fa fa-money"></i> Pool Fee: 0% UNTIL 2022!  
-		</br> <div><i class="fa fa-cog"></i> Pending amount does not include Beams in process of sending, please open your wallet to refresh Paid Amount</div>
-		<div><i class="fa fa-cog"></i> If Pending amount still does not land on your wallet, please contact the pool op on telegram - <a href="https://t.me/raskulpool">click here!</a></div></div>
+		<div style="float:right; padding-top: 9px; padding-right: 18px;"><i class="fa fa-cog"></i> Shares: <span id="statsTotalShares">...</span></div>
+		<div style="float:left; padding-top: 9px; padding-left: 18px; padding-right: 18px;"><i class="fa fa-money"></i> Balance: <span id="statsTotalBal">...</span>  </div>
+		<div style="padding-top: 9px; padding-left: 18px;"><i class="fa fa-money"></i> Paid: <span id="statsTotalPaid">...</span>&nbsp;&nbsp; <i class="fa fa-money"></i> Pool Fee: 1% <i class="fa fa-cog"></i> Please open your wallet regularly to receive your rewards </div>
+	
 		</div>
     </div>
 </div>

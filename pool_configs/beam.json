@@ -24,12 +24,12 @@
  },
 "ports": {
         "1690": { //A port for your miners to connect to
-            "diff": 50, //the pool difficulty for this port
+            "diff": 200, //the pool difficulty for this port
 
             /* Variable difficulty is a feature that will automatically adjust difficulty for
                individual miners based on their hashrate in order to lower networking overhead */
             "varDiff": {
-                "minDiff": 50, //Minimum difficulty
+                "minDiff": 200, //Minimum difficulty
                 "maxDiff": 50000, //Network difficulty will be used if it is lower than this
                 "targetTime": 7, //Try to get 1 share per this many seconds
                 "retargetTime": 60, //Check to see if we should retarget every this many seconds
@@ -61,8 +61,8 @@
     "enabled": true,
     "host": "127.0.0.1",
     "port": 3306,
-    "user": "mysqluser",
-    "password": "mysqlpassword",
+    "user": "sqluser",
+    "password": "sqlpassword",
     "database": "beam",
     "checkPassword": false,
     "autoCreateWorker": true

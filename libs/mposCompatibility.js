@@ -2,7 +2,11 @@ var algos = require('stratum-pool/lib/algoProperties.js');
 var cluster = require('cluster');
 
 const { promisify } = require('util')
-const sleep = promisify(setTimeout)
+//const sleep = promisify(setTimeout)
+const sleep = (seconds) => {
+  return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+};
+
 
 const mysql = require('mysql');
 
@@ -18,8 +22,8 @@ module.exports = function(logger, poolConfig) {
     database: mposConfig.database,
   });
 
-  const query = (...args) => {
-	  console.log("query " + JSON.stringify(args));
+  const query = (...args) => {//
+//	  console.log("query " + JSON.stringify(args));
     return new Promise((resolve, reject) => {
       connection.query(args[0], args[1], function(err, result) {
         if (err) reject(err);
@@ -35,7 +39,7 @@ module.exports = function(logger, poolConfig) {
     var ports = Object.keys(poolConfig.ports);
     const pid = process.env.pid;
     const timestamp = Math.round(+new Date() / 1000);
-    const algo = 'beamHashII'; // poolConfig.coin.algorithm;
+    const algo = 'beamHashIII'; // poolConfig.coin.algorithm;
     // const url = "url";
     const port = ports[0];
     const symbol = poolConfig.coin.symbol;
@@ -145,13 +149,12 @@ module.exports = function(logger, poolConfig) {
 
   
     this.handleBlockUpdate = async function(reply) {
-      console.log(Date.now() + "*** pre DEBUG MPOS handleBlockUpdate(): " + JSON.stringify(reply));
-      sleep(5000);
-      console.log(Date.now() + "*** ppost DEBUG MPOS handleBlockUpdate(): " + JSON.stringify(reply));
+//      await sleep(2);
 
 
-	//const coinData = await query('SELECT id FROM coins WHERE symbol = ?', [symbol]);
-	   
+	const coinData = await query('SELECT id FROM blocks WHERE jobid= ?', [reply.id]);
+		  console.log("coinData after select is " + JSON.stringify(coinData));
+
          const result = await query(
           "UPDATE blocks set blockhash = ? WHERE jobid = ?",
           [reply.blockhash, reply.id]);
