@@ -371,7 +371,7 @@ Your (very basic) pool GUI will then be publicly accessible from
 
 http://YOUR_POOL_IP:8010
 
-If you wish to utilise it, you can now set up the BASiC Payment Processor from the repo.
+If you wish to utilise it, you can now set up the BASiC Payment Processor from https://github.com/r45ku1/basic
 
 All code released with no warranty and no support assistance.
 
