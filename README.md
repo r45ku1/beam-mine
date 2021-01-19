@@ -356,9 +356,9 @@ Once powered up and logged in, make sure you have your node 100% synch and scree
 Navigate into your beam-explorer folder and run the API using. the following command:
 
 	screen -dmS EXPLORER ./explorer-node
-Run the wallet API:
+Run the wallet API (and enable offline payments):
 
-	screen -dmS API ./wallet-api   
+	screen -dmS API ./wallet-api --enable_lelantus
 Set up your wallet listener from within the beam-node folder:
 
 	screen -dmS LISTEN ./beam-wallet listen -n YOURSERVERIP:10127
