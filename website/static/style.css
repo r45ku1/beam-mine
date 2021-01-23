@@ -70,3 +70,9 @@ footer a{
 footer iframe{
     vertical-align: middle;
 }
+.pure-table td:first-child, .pure-table th:first-child {
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
