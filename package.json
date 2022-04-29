@@ -28,7 +28,7 @@
         "url": "https://github.com/r45ku1/beam-stratum-pool.git"
     },
     "dependencies": {
-        "async": "^2.6.1",
+        "async": "^2.6.4",
         "bignum": "^0.13.0",
         "bip66": "^1.1.5",
         "bluebird": "^3.5.5",
