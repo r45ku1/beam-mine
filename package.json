@@ -40,7 +40,7 @@
         "dot": "^1.1.2",
         "dotenv": "^8.2.0",
         "eventemitter2": "^5.0.1",
-        "express": "^4.16.3",
+        "express": "^4.17.3",
         "extend": "^3.0.2",
         "jayson": "^3.2.1",
         "json-socket": "^0.3.0",
